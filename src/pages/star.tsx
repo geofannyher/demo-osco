@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import MicIcon from "@mui/icons-material/Mic";
 import StopIcon from "@mui/icons-material/Stop";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
+// import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import AlertSnackbar from "../components/AlertSnackbar/Alertsnackbar";
 import VideoRecorder from "../components/VideoRecorder/VideoRecorder";
 import {
   chatbot,
-  resetChatbot,
+  // resetChatbot,
   speechToText,
   textToSpeech,
 } from "../services/ApiService";
