@@ -221,7 +221,7 @@ const Star = () => {
               />
               {/* User and Star Text Container */}
               {results && results.length > 0 && (
-                <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center overflow-y-auto">
+                <div className="absolute bottom-0 left-0 right-0 h-[38%] bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center overflow-y-auto">
                   <div className="w-full h-full px-4 space-y-3">
                     {results.map((result: any, _: any) => {
                       const cleanResult = result.result.replace(
