@@ -5,7 +5,6 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AlertSnackbar from "../components/AlertSnackbar/Alertsnackbar";
 import VideoRecorder from "../components/VideoRecorder/VideoRecorder";
 import { chatbot, speechToText, textToSpeech } from "../services/ApiService";
-import logo from "../assets/logo.svg";
 import TypewriterEffect from "../components/TypewriterEffect/TypewriterEffect";
 
 const Star = () => {
@@ -201,16 +200,7 @@ const Star = () => {
     <div className="flex flex-col justify-center items-center min-h-screen  mt-5">
       <div className="relative h-screen flex justify-center items-center">
         <div className="absolute h-screen mt-5 flex flex-col items-center">
-          <img
-            src={logo}
-            alt="logo"
-            className="mb-8 "
-            style={{ width: "1000px" }}
-            onClick={() => {
-              window.location.href = "/choose-star";
-            }}
-          />
-          <div className=" relative">
+          <div className="relative">
             {/* Video Player */}
             <div className="relative">
               <VideoRecorder
