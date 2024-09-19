@@ -140,8 +140,10 @@ const Star = () => {
         );
 
         if (!chatResponse) return;
-
-        const resultChat = chatResponse.data;
+        const cleanResult = chatResponse.data
+          ? chatResponse.data.replace(/```json\n\[\]\n```/g, "")
+          : chatResponse.data;
+        const resultChat = cleanResult;
         const audioResponse = await makeApiCall(
           () => textToSpeech(resultChat, voiceId),
           "Error during text-to-speech processing"
