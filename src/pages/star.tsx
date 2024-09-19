@@ -2,15 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import MicIcon from "@mui/icons-material/Mic";
 import StopIcon from "@mui/icons-material/Stop";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-// import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import AlertSnackbar from "../components/AlertSnackbar/Alertsnackbar";
 import VideoRecorder from "../components/VideoRecorder/VideoRecorder";
-import {
-  chatbot,
-  // resetChatbot,
-  speechToText,
-  textToSpeech,
-} from "../services/ApiService";
+import { chatbot, speechToText, textToSpeech } from "../services/ApiService";
 import logo from "../assets/logo.svg";
 import TypewriterEffect from "../components/TypewriterEffect/TypewriterEffect";
 
@@ -196,12 +190,6 @@ const Star = () => {
     }
   };
 
-  // const handleReset = async () => {
-  //   setIsRecording(false);
-  //   setResults([]);
-  //   makeApiCall(() => resetChatbot("1", "ibu"), "Error during chatbot reset");
-  // };
-
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
     setSnackbarMessage("");
@@ -221,14 +209,6 @@ const Star = () => {
             }}
           />
           <div className=" relative">
-            {/* <button
-              onClick={handleReset}
-              className="top-0 absolute right-0 bg-gray-300 hover:bg-gray-400 text-black font-bold py-1 px-2 rounded-full focus:outline-none focus:shadow-outline"
-              style={{ top: "100px", zIndex: 10 }}
-            >
-              <RestartAltIcon />
-            </button> */}
-
             {/* Video Player */}
             <div className="relative">
               <VideoRecorder
@@ -236,37 +216,47 @@ const Star = () => {
                 videoSrc={
                   showVideo
                     ? "https://res.cloudinary.com/dcd1jeldi/video/upload/v1725953708/rbykdqcq4ltnwyinwgz8.mp4"
-                    : "https://res.cloudinary.com/dcd1jeldi/video/upload/v1725342398/pgttae07bfixrpqezq9h.mp4"
+                    : "https://res.cloudinary.com/dcd1jeldi/video/upload/v1726729720/oxgouziecwwgn8wltxhs.mp4"
                 }
               />
-
               {/* User and Star Text Container */}
               {results && results.length > 0 && (
-                <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center">
-                  {results.map((result: any, _: any) => (
-                    <div
-                      // key={result.id}
-                      className={`w-full mb-3 px-4 ${
-                        result.status === "user" ? "text-right" : "text-left"
-                      }`}
-                    >
-                      <p
-                        className={
-                          result.status === "user" ? "user-text" : "star-text"
-                        }
-                      >
-                        {result.title.charAt(0).toUpperCase() +
-                          result.title.slice(1)}
-                      </p>
-                      <div className="content-text">
-                        {result.id === newestMessageId ? (
-                          <TypewriterEffect text={result.result} />
-                        ) : (
-                          <span className="text-white">{result.result}</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center overflow-y-auto">
+                  <div className="w-full h-full px-4 space-y-3">
+                    {results.map((result: any, _: any) => {
+                      const cleanResult = result.result.replace(
+                        /```json\n\[\]\n```/g,
+                        ""
+                      );
+                      return (
+                        <div
+                          className={`w-full px-4 ${
+                            result.status === "user"
+                              ? "text-right"
+                              : "text-left"
+                          }`}
+                        >
+                          <p
+                            className={
+                              result.status === "user"
+                                ? "user-text"
+                                : "star-text"
+                            }
+                          >
+                            {result.title.charAt(0).toUpperCase() +
+                              result.title.slice(1)}
+                          </p>
+                          <div className="content-text">
+                            {result.id === newestMessageId ? (
+                              <TypewriterEffect text={cleanResult} />
+                            ) : (
+                              <span className="text-white">{cleanResult}</span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>
