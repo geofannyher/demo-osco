@@ -4,8 +4,14 @@ import StopIcon from "@mui/icons-material/Stop";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AlertSnackbar from "../components/AlertSnackbar/Alertsnackbar";
 import VideoRecorder from "../components/VideoRecorder/VideoRecorder";
-import { chatbot, speechToText, textToSpeech } from "../services/ApiService";
+import {
+  chatbot,
+  resetChatbot,
+  speechToText,
+  textToSpeech,
+} from "../services/ApiService";
 import TypewriterEffect from "../components/TypewriterEffect/TypewriterEffect";
+import { ReplayOutlined } from "@mui/icons-material";
 
 const Star = () => {
   const [startTime, setStartTime] = useState<any>(null);
@@ -191,6 +197,17 @@ const Star = () => {
     }
   };
 
+  const handleReset = async () => {
+    setIsRecording(false);
+    setResults([]);
+    makeApiCall(
+      () => resetChatbot("1", starName),
+      "Error during chatbot reset"
+    );
+    setOpenSnackbar(!openSnackbar);
+    setSnackbarMessage("success reset");
+  };
+
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
     setSnackbarMessage("");
@@ -201,6 +218,16 @@ const Star = () => {
       <div className="relative h-screen flex justify-center items-center">
         <div className="absolute h-screen mt-5 flex flex-col items-center">
           <div className="relative">
+            <button
+              onClick={() => handleReset()}
+              className="flex shadow-sm duration-300 hover:bg-violet-900 items-center justify-center text-white absolute -right-2 z-50 -top-5 rounded-full w-10 h-10 bg-violet-500"
+            >
+              <ReplayOutlined
+                style={{
+                  fontSize: 18,
+                }}
+              />
+            </button>
             {/* Video Player */}
             <div className="relative">
               <VideoRecorder
