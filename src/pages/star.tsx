@@ -240,8 +240,8 @@ const Star = () => {
               />
               {/* User and Star Text Container */}
               {results && results.length > 0 && (
-                <div className="absolute bottom-0 left-0 right-0 h-[38%] bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center overflow-y-auto">
-                  <div className="w-full h-full px-4 space-y-3">
+                <div className="absolute bottom-0 left-0 right-0 h-[38%] overflow-y-auto bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center">
+                  <div className="w-full h-full px-4 space-y-3 overflow-y-auto">
                     {results.map((result: any, _: any) => {
                       const cleanResult = result.result.replace(
                         /```json\n\[\]\n```/g,
@@ -254,6 +254,7 @@ const Star = () => {
                               ? "text-right"
                               : "text-left"
                           }`}
+                          key={result.id} // Add a key for each element
                         >
                           <p
                             className={
@@ -298,6 +299,7 @@ const Star = () => {
               <span style={{ pointerEvents: "none" }}>{buttonIcon}</span>
             </button>
           </div>
+
           <p className="text-center text-[#293060] font-bold">{buttonText}</p>
         </div>
       </div>
