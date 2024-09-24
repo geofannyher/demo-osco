@@ -24,9 +24,9 @@ const Star = () => {
   const [buttonColor, setButtonColor] = useState("#6C2B85");
   const [buttonIcon, setButtonIcon] = useState(<MicIcon />);
   const [showVideo, setShowVideo] = useState(false);
-  const [voiceId] = useState("W0hommVzZRi2WK1JWt3J");
+  const [voiceId] = useState("xmeLoFhkpUp2tqFokmPw");
   const [model] = useState("gpt-4o");
-  const [starName] = useState("davina_definite");
+  const [starName] = useState("nara_ikn");
   const [results, setResults] = useState<any>([]);
   const [stream, setStream] = useState<any>(null);
   const [audioChunks, setAudioChunks] = useState([]);
