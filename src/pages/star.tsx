@@ -234,8 +234,8 @@ const Star = () => {
                 isRecording={isRecording}
                 videoSrc={
                   showVideo
-                    ? "https://res.cloudinary.com/dcd1jeldi/video/upload/v1725953708/rbykdqcq4ltnwyinwgz8.mp4"
-                    : "https://res.cloudinary.com/dcd1jeldi/video/upload/v1726729720/oxgouziecwwgn8wltxhs.mp4"
+                    ? "https://res.cloudinary.com/dcd1jeldi/video/upload/v1727323156/zwboitqayyenth2vbe1w.mp4"
+                    : "https://res.cloudinary.com/dcd1jeldi/video/upload/v1727323146/qlbjfh8qqdy6jk94lqti.mp4"
                 }
               />
               {/* User and Star Text Container */}
