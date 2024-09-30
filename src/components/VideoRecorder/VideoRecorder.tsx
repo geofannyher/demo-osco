@@ -9,6 +9,7 @@ const VideoRecorder = ({ videoSrc }: any) => {
           width: "600px",
           height: "750px",
           objectFit: "cover",
+          objectPosition: "9% 100%",
         }}
         autoPlay={true}
         loop={true}
