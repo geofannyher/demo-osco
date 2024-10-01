@@ -26,7 +26,7 @@ const Star = () => {
   const [showVideo, setShowVideo] = useState(false);
   const [voiceId] = useState("xmeLoFhkpUp2tqFokmPw");
   const [model] = useState("gpt-4o");
-  const [starName] = useState("nara_ikn");
+  const [starName] = useState("osco");
   const [results, setResults] = useState<any>([]);
   const [stream, setStream] = useState<any>(null);
   const [audioChunks, setAudioChunks] = useState([]);
@@ -214,7 +214,7 @@ const Star = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen  mt-5">
+    <div className="flex flex-col justify-center items-center min-h-screen pt-5">
       <div className="relative h-screen flex justify-center items-center">
         <div className="absolute h-screen mt-5 flex flex-col items-center">
           <div className="relative">
@@ -234,13 +234,13 @@ const Star = () => {
                 isRecording={isRecording}
                 videoSrc={
                   showVideo
-                    ? "https://rr1---sn-npoe7ns7.googlevideo.com/videoplayback?expire=1727705242&ei=Olz6Zv-9AozErtoPvI7MOQ&ip=184.82.124.189&id=o-AKLjk4xSOkHLd44ZNLhZg1MWvwHHlMxcG3a_JazpqBUm&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AXLXGFSiWXhVkBZJudiw5qQh70aeCJxVGLbkCR3OJRiAEGHJ7R_V8Nz-biUQiGprPAk_n3uTXUV2VXEC&spc=54MbxeZCSJK2XhFU1h914hLVt8SNEdJdu7liRHq0Yo1bL5wKkI5H76c&vprv=1&svpuc=1&mime=video%2Fmp4&ns=sEmisicZLMYFkKD7aSBLIrUQ&rqh=1&gir=yes&clen=651746&ratebypass=yes&dur=15.139&lmt=1693796241616334&fexp=24350458,24350518,24350556,51299152,51300760&c=WEB_CREATOR&sefc=1&txp=5318224&n=FC2d8_XzRzh1Hw&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgOBejREDyA4tVPOyi1zMzZc6Bz8yPuRnJpYZRlhdpIU0CIC5uLNNPpOwKSyS7SMnsh1QdVNYmssg9XzBbF88cYCYz&title=Digital%20audio%20spectrum%20sound%20Equalizer%20effect%20%20%20Free%20HD%20Video%20Clips%20%26%20Stock%20Video%20Footage&rm=sn-5fo-c33l77d,sn-30as676&rrc=79,104&req_id=343ab3d88516a3ee&met=1727688281,&rms=nxu,nxu&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=ck&mip=180.253.166.90&mm=30&mn=sn-npoe7ns7&ms=nxu&mt=1727687792&mv=m&mvi=1&pl=21&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ABPmVW0wRAIgOP3vBSWhb1CBIpmXKVXYyJj78J433Y8SR8AWyakl_BUCIBPQt3e5l1sV0_6vv9XH8gnlPg8d1ebtQ3Q15WJB9z4g"
-                    : "https://rr1---sn-npoe7ns7.googlevideo.com/videoplayback?expire=1727705242&ei=Olz6Zv-9AozErtoPvI7MOQ&ip=184.82.124.189&id=o-AKLjk4xSOkHLd44ZNLhZg1MWvwHHlMxcG3a_JazpqBUm&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AXLXGFSiWXhVkBZJudiw5qQh70aeCJxVGLbkCR3OJRiAEGHJ7R_V8Nz-biUQiGprPAk_n3uTXUV2VXEC&spc=54MbxeZCSJK2XhFU1h914hLVt8SNEdJdu7liRHq0Yo1bL5wKkI5H76c&vprv=1&svpuc=1&mime=video%2Fmp4&ns=sEmisicZLMYFkKD7aSBLIrUQ&rqh=1&gir=yes&clen=651746&ratebypass=yes&dur=15.139&lmt=1693796241616334&fexp=24350458,24350518,24350556,51299152,51300760&c=WEB_CREATOR&sefc=1&txp=5318224&n=FC2d8_XzRzh1Hw&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRAIgOBejREDyA4tVPOyi1zMzZc6Bz8yPuRnJpYZRlhdpIU0CIC5uLNNPpOwKSyS7SMnsh1QdVNYmssg9XzBbF88cYCYz&title=Digital%20audio%20spectrum%20sound%20Equalizer%20effect%20%20%20Free%20HD%20Video%20Clips%20%26%20Stock%20Video%20Footage&rm=sn-5fo-c33l77d,sn-30as676&rrc=79,104&req_id=343ab3d88516a3ee&met=1727688281,&rms=nxu,nxu&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=ck&mip=180.253.166.90&mm=30&mn=sn-npoe7ns7&ms=nxu&mt=1727687792&mv=m&mvi=1&pl=21&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=ABPmVW0wRAIgOP3vBSWhb1CBIpmXKVXYyJj78J433Y8SR8AWyakl_BUCIBPQt3e5l1sV0_6vv9XH8gnlPg8d1ebtQ3Q15WJB9z4g"
+                    ? "https://res.cloudinary.com/dcd1jeldi/video/upload/v1727755559/it2dn9yezcq5lsq7xlsj.mp4"
+                    : "https://res.cloudinary.com/dcd1jeldi/video/upload/v1727755720/akint0fmpxuodmivgw57.mp4"
                 }
               />
               {/* User and Star Text Container */}
               {results && results.length > 0 && (
-                <div className="absolute bottom-0 left-0 right-0 h-[38%] overflow-y-auto bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center">
+                <div className="absolute bottom-0 left-0 right-0 h-[38%] overflow-y-auto rounded-br-lg rounded-bl-lg bg-black bg-opacity-50 text-white z-20 flex flex-col justify-center items-center">
                   <div className="w-full h-full px-4 space-y-3 overflow-y-auto">
                     {results.map((result: any, _: any) => {
                       const cleanResult = result.result.replace(
