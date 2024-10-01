@@ -72,6 +72,19 @@ const Star = () => {
     }
   }, [results, isLoadingChatResponse]);
 
+  useEffect(() => {
+    setResults([
+      {
+        id: 231313,
+        result:
+          "Halo, saya Osco Olfriady Letunggamu dari GEKRAFS, Gerakan Ekonomi Kreatif Nasional. Ada yang bisa kita diskusikan?",
+        status: "star",
+        title: "osco",
+      },
+    ]);
+    setNewestMessageId(231313);
+  }, []);
+
   const addMessage = async (text: string, status: string, title: string) => {
     const newMessage = { status, title, result: text, id: Date.now() };
     setResults((prevResults: any) => [newMessage, ...prevResults]);
@@ -221,7 +234,6 @@ const Star = () => {
     setOpenSnackbar(false);
     setSnackbarMessage("");
   };
-
   return (
     <div className="flex flex-col justify-center items-center min-h-screen pt-5">
       <div className="relative h-screen flex justify-center items-center">
