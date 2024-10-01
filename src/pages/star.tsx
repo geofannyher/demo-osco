@@ -24,7 +24,7 @@ const Star = () => {
   const [buttonColor, setButtonColor] = useState("#6C2B85");
   const [buttonIcon, setButtonIcon] = useState(<MicIcon />);
   const [showVideo, setShowVideo] = useState(false);
-  const [voiceId] = useState("xmeLoFhkpUp2tqFokmPw");
+  const [voiceId] = useState("9p9SE48FlAiFkK5sCRly");
   const [model] = useState("gpt-4o");
   const [starName] = useState("osco");
   const [results, setResults] = useState<any>([]);
