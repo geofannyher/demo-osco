@@ -223,7 +223,7 @@ const Star = () => {
     setIsRecording(false);
     setResults([]);
     makeApiCall(
-      () => resetChatbot("1", starName),
+      () => resetChatbot("dev", starName),
       "Error during chatbot reset"
     );
     setOpenSnackbar(!openSnackbar);
