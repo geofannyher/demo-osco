@@ -44,7 +44,16 @@ const Star = () => {
         });
         setStream(streamData);
       } catch (err: any) {
-        alert(err.message);
+        console.error("Microphone permission error:", err);
+        if (err.name === "NotAllowedError") {
+          alert(
+            "Microphone access was denied. Please enable it in your browser settings."
+          );
+        } else if (err.name === "NotFoundError") {
+          alert("No microphone was found on your device.");
+        } else {
+          alert("Error accessing the microphone: " + err.message);
+        }
       }
     } else {
       alert("The MediaRecorder API is not supported in your browser.");
